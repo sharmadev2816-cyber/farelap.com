@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FARELAP Travel & Tours</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>FARELAP Travel & Tours</h1>
+  <p>Your Journey, Our Expertise</p>
+</header>
+<nav>
+  <a href="index.html">Home</a>
+<div class="section">
+  <h2>Search & Book</h2>
+  <div class="search-bar">
+    <select id="searchType">
+      <option value="flights">Flights</option>
+      <option value="hotels">Hotels</option>
+    </select>
+    <input type="text" id="from" placeholder="From (City/Airport)">
+    <input type="text" id="to" placeholder="To (City/Airport)">
+    <input type="date" id="departDate">
+    <input type="date" id="returnDate">
+    <input type="number" id="guests" placeholder="Guests" min="1" value="1">
+    <button onclick="searchBooking()" class="btn">Find Deals</button>
+  </div>
+</div>
+  <a href="about.html">About Us</a>
+  <a href="services.html">Services</a>
+  <a href="corporate.html">Corporate Travel</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a>
+  <a href="terms.html">Terms</a>
+  <a href="privacy.html">Privacy</a>
+</nav>
+<div class="hero">
+  <h1>Your Journey, Our Expertise</h1>
+  <p>Book flights, hotels, holidays, cars, cruises, and insurance — all in one place.</p>
+  <a href="services.html" class="btn">Search & Book Now</a>
+</div>
+<div class="section">
+  <h2>Top Travel Offers</h2>
+  <p>Explore curated packages and exclusive deals for your next adventure.</p>
+</div>
+<footer>
+  <p>© 2026 FARELAP. All rights reserved.</p>
+</footer>
+</body>
+</html>
+
+<script>
+function searchBooking() {
+  const type = document.getElementById("searchType").value;
+  const from = document.getElementById("from").value;
+  const to = document.getElementById("to").value;
+  const depart = document.getElementById("departDate").value;
+  const ret = document.getElementById("returnDate").value;
+  const guests = document.getElementById("guests").value;
+
+  if(type === "flights") {
+    alert(`Searching flights from ${from} to ${to}, Depart: ${depart}, Return: ${ret}, Guests: ${guests}`);
+    // Later: integrate with flight API (Amadeus, Sabre, etc.)
+  } else if(type === "hotels") {
+    alert(`Searching hotels in ${to}, Check-in: ${depart}, Check-out: ${ret}, Guests: ${guests}`);
+    // Later: integrate with hotel API (Booking.com, Expedia, etc.)
+  }
+}
+</script>
